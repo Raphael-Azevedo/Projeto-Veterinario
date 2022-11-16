@@ -1,0 +1,8 @@
+mat-form-field {
+  width: 50%;
+}
+td, th{
+  border-left: 15px solid transparent;
+  background-clip: padding-box;
+  text-align: justify;
+}

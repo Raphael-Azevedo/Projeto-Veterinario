@@ -1,0 +1,56 @@
+<div class="head">
+  <button mat-raised-button color="primary" routerLink="/atendimento/novo" routerLinkActive="active">Cadastrar novo Atendimento</button>
+  <br>
+  <br>
+
+  <div >
+    <h2>Lista de Atendimentos</h2>
+  </div>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Cachorro atendido </th>
+      <td mat-cell *matCellDef="let element"> {{element.pet.nome}} </td>
+    </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="veterinario">
+        <th mat-header-cell *matHeaderCellDef> Veterinario </th>
+        <td mat-cell *matCellDef="let element"> {{element.veterinario.nome}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataDeAtendimento">
+        <th mat-header-cell *matHeaderCellDef> Data de Atendimento </th>
+        <td mat-cell *matCellDef="let element"> {{element.dataDeAtendimento | date: 'dd/MM/yyyy'}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="horarioDeAtendimento">
+        <th mat-header-cell *matHeaderCellDef> Horario do Atendimento </th>
+        <td mat-cell *matCellDef="let element"> {{element.horarioDeAtendimento | date: 'HH:mm' : 'pt-BR'}} </td>
+      </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="diagnostico">
+      <th mat-header-cell *matHeaderCellDef> Diagnóstico </th>
+      <td mat-cell *matCellDef="let element"> {{element.diagnostico}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="comentario">
+      <th mat-header-cell *matHeaderCellDef> Comentários </th>
+      <td mat-cell *matCellDef="let element"> {{element.comentario}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="acao">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element"> <button mat-flat-button color="primary" routerLink="/atendimento/{{element.atendimentoId}}" selected>Editar</button><button mat-flat-button color="warn" (click)="deleteAtendimento(element.atendimentoId)" >Deletar</button></td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+

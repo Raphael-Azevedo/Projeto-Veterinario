@@ -1,0 +1,53 @@
+<br>
+<br>
+
+<div>
+  <h2>Atualizar Veterinario</h2>
+</div>
+<form class="example-container" [formGroup]="vetForm" (ngSubmit)="updateVeterinario(vetForm.value)">
+  <mat-form-field>
+    <input matInput name="nome" placeholder="Nome do veterinário" formControlName="nome">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="crmv" placeholder="CRMV" formControlName="crmv">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input type="email" matInput name="email" placeholder="Email" formControlName="email">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input	type="phone"  matInput name="telefone" placeholder="Telefone" formControlName="telefone">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="endereco" placeholder="Endereço" formControlName="endereco">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input type="number" matInput name="cep" placeholder="CEP" formControlName="cep">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="bairro" placeholder="Bairro" formControlName="bairro">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="cidade" placeholder="Cidade" formControlName="cidade">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="consultorio" placeholder="Consultório" formControlName="consultorio">
+  </mat-form-field>
+  <br>
+   <br>
+   <div class="btn">
+  <button type="submit" [disabled]="!vetForm.valid" mat-raised-button color="primary" >Atualizar</button>
+</div>
+</form>
+<br>
+<br>
+<div class="btn">
+<button mat-raised-button color="primary" routerLink="/veterinarios" routerLinkActive="active">Voltar a lista</button>
+</div>

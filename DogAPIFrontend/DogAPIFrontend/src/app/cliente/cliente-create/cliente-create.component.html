@@ -1,0 +1,49 @@
+<br>
+<br>
+
+<div>
+  <h2>Cadastras Novo Cliente</h2>
+</div>
+<form class="example-container" [formGroup]="ClientForm" (ngSubmit)="addCliente(ClientForm.value)">
+  <mat-form-field>
+    <input matInput name="nome" placeholder="Nome do Cliente" formControlName="nome">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="cpf" placeholder="111.111.111-11" formControlName="cpf">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input type="email" matInput name="email" placeholder="Email" formControlName="email">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input	type="phone"  matInput name="telefone" placeholder="Telefone" formControlName="telefone">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="endereco" placeholder="Endereço" formControlName="endereco">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input type="number" matInput name="cep" placeholder="CEP" formControlName="cep">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="bairro" placeholder="Bairro" formControlName="bairro">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="cidade" placeholder="Cidade" formControlName="cidade">
+  </mat-form-field>
+  <br>
+   <br>
+   <div class="btn">
+  <button type="submit" [disabled]="!ClientForm.valid" mat-raised-button color="primary" >Adicionar</button>
+</div>
+</form>
+<br>
+<br>
+<div class="btn">
+<button mat-raised-button color="primary" routerLink="/clientes" routerLinkActive="active">Voltar a lista</button>
+</div>

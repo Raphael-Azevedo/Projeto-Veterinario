@@ -1,0 +1,57 @@
+<div class="col-md-12">
+  <div class="card card-container">
+    <img
+      id="profile-img"
+      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+      class="profile-img-card"
+    />
+    <form
+      *ngIf="!isLoggedIn" [formGroup]="loginForm" (ngSubmit)="addLogin(loginForm.value)" >
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+        type="email"
+        class="form-control"
+        matInput name="email"
+        formControlName="email"
+        required
+        />
+        <div class="alert alert-warning" *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched">
+          O Email é obrigatório!
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input
+        type="password"
+        class="form-control"
+        matInput name="password"
+        formControlName="password"
+        required
+        password
+        />
+        <div class="alert alert-warning"  *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">
+          A Senha é obrigatório
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">
+          Entrar
+        </button>
+      </div>
+      <div class="form-group">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="isLoginFailed"
+        >
+          Login falhou: {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+      Entrou como {{ roles }}.
+    </div>
+  </div>
+</div>

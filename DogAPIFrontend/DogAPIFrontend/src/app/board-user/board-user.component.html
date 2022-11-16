@@ -1,0 +1,15 @@
+<div class="container">
+  <header class="jumbotron">
+    <p>Usuário: {{ currentUser.email }}</p>
+  </header>
+</div>
+<body>
+  <h2>Serviços</h2>
+  <br>
+  <ul class="container">
+    <a routerLink="/racas" routerLinkActive="active"><li class="card">Todas as Raças</li></a>
+    <a routerLink="/raca" routerLinkActive="active"><li class="card">Buscar dados de uma raça</li></a>
+    <a routerLink="/imagem" routerLinkActive="active"><li class="card">Imagem de raças</li></a>
+    <a routerLink="/user/atendimentos" routerLinkActive="active"><li class="card">Consultar atendimentos</li></a>
+  </ul>
+</body>

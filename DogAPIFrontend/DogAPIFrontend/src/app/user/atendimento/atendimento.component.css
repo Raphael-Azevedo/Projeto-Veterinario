@@ -1,0 +1,8 @@
+.head{
+  margin-top: 50px;
+}
+td, th {
+  border-left: 30px solid transparent;
+  background-clip: padding-box;
+  text-align: justify;
+}

@@ -1,0 +1,24 @@
+.card {
+  width: 190px;
+  height: 254px;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe,
+              -15px -15px 30px #ffffff;
+  text-align: center;
+  padding-top: 98px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 19px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+li{
+  display: inline-flex;
+  position: relative;
+  justify-items: space-between;
+  margin: 40px;
+}
+a{
+  text-decoration: none;
+  color: rgb(49, 48, 48);
+}

@@ -1,0 +1,62 @@
+<br>
+<br>
+
+<div>
+  <h2>Atualizar Pet</h2>
+</div>
+<form class="example-container" [formGroup]="petForm" (ngSubmit)="upgradePet(petForm.value)">
+  <mat-form-field>
+    <input matInput name="nome" placeholder="Nome do Pet" formControlName="nome">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="tutorCpf" placeholder="CPF do tutor" formControlName="tutorCpf">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput name="nomeRaca" placeholder="Nome da Raça" formControlName="nomeRaca">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input type="number" matInput name="tamanho" placeholder="Tamanho em cm" formControlName="tamanho">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input type="number" matInput name="peso" placeholder="Peso em KG" formControlName="peso">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput name="vacinas" placeholder="Vacinas" formControlName="vacinas">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Data de Nascimento</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dataDeNascimento" matInput name="dataDeNascimento">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input  matInput name="pedigree" placeholder="Pedigree" formControlName="pedigree">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Porte</mat-label>
+    <select matNativeControl formControlName="porte"  name="port">
+      <option value="Pequeno">Pequeno</option>
+      <option value="Medio">Medio</option>
+      <option value="Grande">Grande</option>
+    </select>
+  </mat-form-field>
+  <br>
+   <br>
+   <div class="btn">
+  <button type="submit" [disabled]="!petForm.valid" mat-raised-button color="primary" >Atualizar</button>
+</div>
+</form>
+<br>
+<br>
+<div class="btn">
+<button mat-raised-button color="primary" routerLink="/pets" routerLinkActive="active">Voltar a lista</button>
+</div>

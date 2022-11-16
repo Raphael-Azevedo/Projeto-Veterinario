@@ -1,0 +1,71 @@
+<div class="head">
+  <button mat-raised-button color="primary" routerLink="/pet/novo" routerLinkActive="active">Adicionar novo Pet</button>
+  <br>
+  <br>
+
+  <div >
+    <h2>Lista de Pets</h2>
+  </div>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="tutor">
+        <th mat-header-cell *matHeaderCellDef> Tutor </th>
+        <td mat-cell *matCellDef="let element"> {{element.tutor.nome}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="raca">
+        <th mat-header-cell *matHeaderCellDef> Raça </th>
+        <td mat-cell *matCellDef="let element"> {{element.raca.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tamanho">
+        <th mat-header-cell *matHeaderCellDef> Tamanho </th>
+        <td mat-cell *matCellDef="let element"> {{element.tamanho}} cm </td>
+      </ng-container>
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="peso">
+      <th mat-header-cell *matHeaderCellDef> Peso </th>
+      <td mat-cell *matCellDef="let element"> {{element.peso}} Kg</td>
+    </ng-container>
+
+    <ng-container matColumnDef="vacinas">
+      <th mat-header-cell *matHeaderCellDef> Vacinas </th>
+      <td mat-cell *matCellDef="let element"> {{element.vacinas}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dataDeNascimento">
+      <th mat-header-cell *matHeaderCellDef> Idade </th>
+      <td mat-cell *matCellDef="let element"> {{element.idade}} anos {{element.mes}} meses</td>
+    </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="pedigree">
+    <th mat-header-cell *matHeaderCellDef> Pedigree </th>
+    <td mat-cell *matCellDef="let element"> {{element.pedigree}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="porte">
+    <th mat-header-cell *matHeaderCellDef> Porte </th>
+    <td mat-cell *matCellDef="let element">{{element.porte}} </td>
+  </ng-container>
+    <!-- Position Column -->
+    <ng-container matColumnDef="acao">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element"> <button mat-flat-button color="primary" routerLink="/pet/{{element.cachorroId}}" selected>Editar</button><button mat-flat-button color="warn" (click)="deletePet(element.cachorroId)" >Deletar</button></td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+

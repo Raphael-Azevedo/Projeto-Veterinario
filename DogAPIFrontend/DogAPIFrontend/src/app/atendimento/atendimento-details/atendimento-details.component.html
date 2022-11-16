@@ -1,0 +1,48 @@
+<br>
+<br>
+
+<div>
+  <h2>Atualizar Atendimento</h2>
+</div>
+<form class="example-container" [formGroup]="atendimentoForm" (ngSubmit)="addAtendimento(atendimentoForm.value)">
+  <mat-form-field appearance="fill">
+    <mat-label>Cachorro</mat-label>
+    <mat-select matNativeControl formControlName="cachorroId"  name="cachorroId">
+      <mat-option *ngFor="let pet of dataSource" [value]="pet.cachorroId">
+        {{pet.nome}}
+    </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Veterinario</mat-label>
+    <mat-select matNativeControl formControlName="veterinarioId"  name="veterinarioId">
+      <mat-option *ngFor="let vet of dataSourc" [value]="vet.veterinarioId">
+        {{vet.nome}}
+    </mat-option>
+  </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput name="diagnostico" placeholder="Diagnóstico" formControlName="diagnostico">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput name="comentario" placeholder="Comentários" formControlName="comentario">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Data de Atendimento</mat-label>
+    <input matInput type="datetime-local" formControlName="dataDeAtendimento" matInput name="dataDeAtendimento">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+  </mat-form-field>
+   <br>
+   <div class="btn">
+  <button type="submit" [disabled]="!atendimentoForm.valid" mat-raised-button color="primary" >Atualizar</button>
+</div>
+</form>
+<br>
+<br>
+<div class="btn">
+<button mat-raised-button color="primary" routerLink="/atendimentos" routerLinkActive="active">Voltar a lista</button>
+</div>
